@@ -8,6 +8,7 @@ class Listing
   property :price,       Integer
   property :imageurl,    Text
   property :created_at,  Date
+  property :description, Text
 
   belongs_to :user
 

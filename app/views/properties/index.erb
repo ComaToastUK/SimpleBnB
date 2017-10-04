@@ -54,12 +54,16 @@
 
       <ul id='listings'>
         <% @listings.reverse.each do |listing| %>
-          <li>
-            <%= listing.title.capitalize %> - <%= listing.location %>, £<%= listing.price %> per night
+        <div class="panel panel-default" style="width:800px; margin:0 auto;">
+          <div class="panel-heading"><h5><%= listing.title.capitalize %><h5></div>
+            <div class="panel-body"><%= listing.location %>, £<%= listing.price %> per night
           </br>
           Listed by <%= listing.user.username %> on <%= listing.created_at %>
-          </li>
-          <img src="<%= listing.imageurl %>" alt="Property photo" width='200px'/>
+          <input action='/description' method='POST' type='submit' value='More info' />
+          </div>
+          <img src="<%= listing.imageurl %>" alt="Property photo" width='px'/>
+        </div>
+      </br>
         <% end %>
       </ul>
     </div>
